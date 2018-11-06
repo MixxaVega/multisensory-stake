@@ -30,7 +30,7 @@
 
     <Button
         android:id="@+id/btnDatos"
-        android:layout_width="159sp"
+        android:layout_width="159dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
