@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
                  startActivity(i);
                 break;
             case R.id.btnHistorial:
-                // Intent i = new Intent(this, informacion.class);
-                // startActivity(i);
+                 i = new Intent(this, historial.class);
+                 startActivity(i);
                 break;
             case R.id.btnBlue:
                 break;
