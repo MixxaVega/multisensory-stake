@@ -1,12 +1,15 @@
 package com.example.supdude.multisensorystake;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
 
@@ -29,6 +32,16 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         btnDatos.setOnClickListener(this);
         btnHistorial.setOnClickListener(this);
         btnBlue.setOnClickListener(this);
+
+        AdminBD baseDatos = new AdminBD(this);
+        SQLiteDatabase base = baseDatos.getWritableDatabase();
+        //insertar en la base de datos
+        baseDatos.insertarRegistro(base);
+
+        Cursor tabla = baseDatos.consultaTotal(base);
+
+        int numregistro = tabla.getCount();
+        Toast.makeText(this, String.valueOf(numregistro), Toast.LENGTH_SHORT).show();
 
     }
 
